@@ -1,0 +1,21 @@
+PODS:
+  - HexColors (2.2.1)
+  - Realm (0.93.2):
+    - Realm/Headers (= 0.93.2)
+  - Realm/Headers (0.93.2)
+  - TOWebViewController (2.0.17)
+  - TSMessages (0.9.12):
+    - HexColors
+
+DEPENDENCIES:
+  - Realm
+  - TOWebViewController
+  - TSMessages
+
+SPEC CHECKSUMS:
+  HexColors: abfd172e329dab59888614ccba6f216cec59289d
+  Realm: 2fdd0ae74f730e190384e0338d8a0d3654df8220
+  TOWebViewController: aada427e7eba199bbaee77ddee3243c8172f4053
+  TSMessages: 2a52642128d7ab15b46930c810b9c9403a2b58f3
+
+COCOAPODS: 0.36.3

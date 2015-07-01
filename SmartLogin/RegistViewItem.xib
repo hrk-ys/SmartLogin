@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistViewController" customModule="SmartLogin" customModuleProvider="target">
+            <connections>
+                <outlet property="searchBar" destination="gqC-si-8QM" id="Bzh-1b-6Qu"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="443"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Qsf-E4-rbM">
+                    <rect key="frame" x="0.0" y="44" width="600" height="355"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gqC-si-8QM">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Qe8-kL-0KV"/>
+                    </constraints>
+                    <textInputTraits key="textInputTraits" keyboardType="URL"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="ZQ9-rP-W4j"/>
+                    </connections>
+                </searchBar>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xnh-oV-TkC">
+                    <rect key="frame" x="0.0" y="399" width="600" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Ass-di-3BM"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem title="閉じる" id="HAS-cB-5vx">
+                            <connections>
+                                <action selector="close:" destination="-1" id="2RJ-TN-cNm"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="クリア" id="sUi-63-E4i">
+                            <connections>
+                                <action selector="clear:" destination="-1" id="DtD-ZI-l7m"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="登録" id="UO7-6q-y0f">
+                            <connections>
+                                <action selector="regist:" destination="-1" id="nhr-J2-YCY"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Qsf-E4-rbM" secondAttribute="trailing" id="6ts-df-3uG"/>
+                <constraint firstItem="Qsf-E4-rbM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8w1-zv-7zW"/>
+                <constraint firstItem="gqC-si-8QM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CWV-oJ-jtL"/>
+                <constraint firstAttribute="trailing" secondItem="gqC-si-8QM" secondAttribute="trailing" id="HcE-Ul-rHa"/>
+                <constraint firstAttribute="trailing" secondItem="Xnh-oV-TkC" secondAttribute="trailing" id="OZ5-Up-7UN"/>
+                <constraint firstItem="gqC-si-8QM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Owo-Lg-0hu"/>
+                <constraint firstItem="Qsf-E4-rbM" firstAttribute="top" secondItem="gqC-si-8QM" secondAttribute="bottom" id="WPv-Ig-zNN"/>
+                <constraint firstItem="Xnh-oV-TkC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bX8-bB-psq"/>
+                <constraint firstItem="Xnh-oV-TkC" firstAttribute="top" secondItem="Qsf-E4-rbM" secondAttribute="bottom" id="o5P-JB-YeR"/>
+                <constraint firstAttribute="bottom" secondItem="Xnh-oV-TkC" secondAttribute="bottom" id="tBV-yP-Yxu"/>
+                <constraint firstItem="Xnh-oV-TkC" firstAttribute="top" secondItem="Qsf-E4-rbM" secondAttribute="bottom" id="tlz-6j-Lx2"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="443" y="379.5"/>
+        </view>
+    </objects>
+</document>
