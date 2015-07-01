@@ -15,6 +15,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        
+//        NSFileManager.defaultManager().removeItemAtPath(RLMRealm.defaultRealmPath(), error: nil)
+        
+//        println(RLMRealm.defaultRealmPath())
+//        
+//        let realm = RLMRealm.defaultRealm()
+//        
+//        let destinations = Destination.allObjects()
+//        println(destinations)
+//        
+//        var dest = Destination()
+//        dest.title = "AG"
+//        
+//        var route = Route()
+//        route.url = "http://dena.jp"
+//        dest.routes.addObject(route)
+//        
+//        var route2 = Route()
+//        route2.url = "http://dena.jp/top"
+//        dest.routes.addObject(route2)
+//        
+//        realm.beginWriteTransaction()
+//        realm.addObject(dest)
+////        realm.addObject(route)
+////        realm.addObject(route2)
+//        realm.commitWriteTransaction()
+        
         // Override point for customization after application launch.
         return true
     }

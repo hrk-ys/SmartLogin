@@ -10,24 +10,26 @@ import UIKit
 
 class WebViewController : TOWebViewController
 {
-    var requestItems:[RequestType] = []
+//    var requestItems:[RequestType] = []
+    var destination : Destination!
+    private var routeIndex = UInt(0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-
-        var r1 = RequestType()
-        r1.requestPath = "http://g-schedule.com/"
-        r1.requestMethod = "GET"
-        requestItems.append(r1)
-        
-        var r2 = PostRequestType()
-        r2.requestPath = "http://g-schedule.com/cgi-bin/g_menu.cgi"
-        r2.requestMethod = "Post"
-        r2.postBody    = "mode=check&gid=34172&num=0&pas=1232&button=%83%8D%83O%83C%83%93"
-        
-        requestItems.append(r2)
+//
+//
+//        var r1 = RequestType()
+//        r1.requestPath = "http://g-schedule.com/"
+//        r1.requestMethod = "GET"
+//        requestItems.append(r1)
+//        
+//        var r2 = PostRequestType()
+//        r2.requestPath = "http://g-schedule.com/cgi-bin/g_menu.cgi"
+//        r2.requestMethod = "Post"
+//        r2.postBody    = "mode=check&gid=34172&num=0&pas=1232&button=%83%8D%83O%83C%83%93"
+//        
+//        requestItems.append(r2)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -38,20 +40,22 @@ class WebViewController : TOWebViewController
     
     private func request() {
         
-        if let req = requestItems.first?.createRequest() {
-            webView.loadRequest(req)
+        if routeIndex < destination.routes.count {
             
-            requestItems.removeAtIndex(0)
-            
-            
-            if !requestItems.isEmpty {
+            if let route = destination.routes[routeIndex] as? Route {
                 
-                let delay = 3.0 * Double(NSEC_PER_SEC)
-                let time  = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-                dispatch_after(time, dispatch_get_main_queue(), {
-                    self.request()
-                })
+                if let req = route.request() {
+                    webView.loadRequest(req)
+                }
             }
+            
+            routeIndex++
+            
+            let delay = 1.0 * Double(NSEC_PER_SEC)
+            let time  = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+            dispatch_after(time, dispatch_get_main_queue(), {
+                self.request()
+            })
         }
     }
 }
@@ -67,17 +71,8 @@ extension WebViewController : UIWebViewDelegate
         }
         return true
     }
-    override func webViewDidStartLoad(webView: UIWebView) {
-        super.webViewDidStartLoad(webView)
-        println("webViewDidStartLoad")
-    }
+
     override func webViewDidFinishLoad(webView: UIWebView) {
         super.webViewDidFinishLoad(webView)
-        println("webViewDidFinishLoad")
-    }
-    
-    override func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
-        super.webView(webView, didFailLoadWithError: error)
-        println(error)
     }
 }

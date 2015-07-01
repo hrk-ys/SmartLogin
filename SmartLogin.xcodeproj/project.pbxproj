@@ -19,6 +19,8 @@
 		E9AA4D681B42E15C0047E1E9 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA4D671B42E15C0047E1E9 /* ListViewController.swift */; };
 		E9AA4D721B4430CE0047E1E9 /* RegistViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AA4D711B4430CE0047E1E9 /* RegistViewItem.xib */; };
 		E9AA4D741B4438250047E1E9 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA4D731B4438250047E1E9 /* Alert.swift */; };
+		E9AA4D791B443EB70047E1E9 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA4D781B443EB70047E1E9 /* Destination.swift */; };
+		E9AA4D7B1B4448760047E1E9 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA4D7A1B4448760047E1E9 /* Route.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		E9AA4D671B42E15C0047E1E9 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		E9AA4D711B4430CE0047E1E9 /* RegistViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistViewItem.xib; sourceTree = "<group>"; };
 		E9AA4D731B4438250047E1E9 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		E9AA4D781B443EB70047E1E9 /* Destination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		E9AA4D7A1B4448760047E1E9 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,11 +117,10 @@
 		E9AA4D361B41A4740047E1E9 /* SmartLogin */ = {
 			isa = PBXGroup;
 			children = (
+				E9AA4D751B443AB70047E1E9 /* Controllers */,
+				E9AA4D761B443AD20047E1E9 /* Views */,
+				E9AA4D771B443AE10047E1E9 /* Models */,
 				E9AA4D391B41A4740047E1E9 /* AppDelegate.swift */,
-				E9AA4D671B42E15C0047E1E9 /* ListViewController.swift */,
-				E9AA4D5B1B41A6CD0047E1E9 /* RegistViewController.swift */,
-				E9AA4D711B4430CE0047E1E9 /* RegistViewItem.xib */,
-				E9AA4D5F1B41AF010047E1E9 /* WebViewController.swift */,
 				E9AA4D3F1B41A4740047E1E9 /* Main.storyboard */,
 				E9AA4D421B41A4740047E1E9 /* Images.xcassets */,
 				E9AA4D441B41A4740047E1E9 /* LaunchScreen.xib */,
@@ -151,6 +154,33 @@
 				E9AA4D501B41A4740047E1E9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E9AA4D751B443AB70047E1E9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E9AA4D671B42E15C0047E1E9 /* ListViewController.swift */,
+				E9AA4D5B1B41A6CD0047E1E9 /* RegistViewController.swift */,
+				E9AA4D5F1B41AF010047E1E9 /* WebViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E9AA4D761B443AD20047E1E9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9AA4D711B4430CE0047E1E9 /* RegistViewItem.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E9AA4D771B443AE10047E1E9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E9AA4D781B443EB70047E1E9 /* Destination.swift */,
+				E9AA4D7A1B4448760047E1E9 /* Route.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,8 +321,10 @@
 			files = (
 				E9AA4D741B4438250047E1E9 /* Alert.swift in Sources */,
 				E9AA4D5C1B41A6CD0047E1E9 /* RegistViewController.swift in Sources */,
+				E9AA4D791B443EB70047E1E9 /* Destination.swift in Sources */,
 				E9AA4D3A1B41A4740047E1E9 /* AppDelegate.swift in Sources */,
 				E9AA4D5E1B41AC0E0047E1E9 /* RequestType.swift in Sources */,
+				E9AA4D7B1B4448760047E1E9 /* Route.swift in Sources */,
 				E9AA4D681B42E15C0047E1E9 /* ListViewController.swift in Sources */,
 				E9AA4D601B41AF010047E1E9 /* WebViewController.swift in Sources */,
 			);

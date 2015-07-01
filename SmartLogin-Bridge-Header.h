@@ -11,5 +11,6 @@
 
 #import <TOWebViewController.h>
 #import <TSMessages/TSMessage.h>
+#import <Realm/Realm.h>
 
 #endif

@@ -45,6 +45,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="PPr-lk-5Jm" kind="show" id="aoJ-cR-gw3"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -54,11 +57,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Smart Login" id="tQt-TN-PWz">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="CfF-DE-ki4">
-                            <connections>
-                                <segue destination="PPr-lk-5Jm" kind="show" id="iXL-Ak-4RE"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="EsA-nX-v9X">
                             <connections>
                                 <segue destination="tqG-Q5-wVh" kind="show" id="aYL-Dq-tIM"/>

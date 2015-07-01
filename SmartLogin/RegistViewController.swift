@@ -10,20 +10,26 @@ import UIKit
 
 class RegistViewController : TOWebViewController
 {
+    private var destination = Destination()
     private var maskView = UIView()
     private var registViewItaem:UIView!
     
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
         maskView.backgroundColor = UIColor(white: 0, alpha: 0.3)
         maskView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "close:"))
         if let views = NSBundle.mainBundle().loadNibNamed("RegistViewItem", owner: self, options: nil) as? [UIView] {
             registViewItaem = views[0]
+            
+            tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         }
-    }
+        
+     }
     
     private func showRegistViewItem() {
         let registVIewItemHeight = CGFloat(self.view.bounds.size.height * 2 / 3)
@@ -56,9 +62,24 @@ class RegistViewController : TOWebViewController
     }
     
     @IBAction func clear(sender: AnyObject) {
+        destination.routes.removeAllObjects()
+        tableView.reloadData()
     }
     
+    @IBAction func edit(sender: AnyObject) {
+        tableView.editing = !tableView.editing
+    }
     @IBAction func regist(sender: AnyObject) {
+        let realm = RLMRealm.defaultRealm()
+        
+        if let route = destination.routes[0] as? Route {
+            destination.title = route.url
+        }
+        realm.beginWriteTransaction()
+        realm.addObject(destination)
+        realm.commitWriteTransaction()
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func tappedLeftBarButton(sender: AnyObject) {
@@ -84,9 +105,38 @@ extension RegistViewController : UIWebViewDelegate
         
         if request.URL?.absoluteString == request.mainDocumentURL?.absoluteString {
             
+            if let req = request as? NSMutableURLRequest {
+                destination.routes.addObject(Route.create(req))
+                tableView.reloadData()
+                println(destination)
+            }
+            
             println(request)
         }
         return true
     }
+}
 
+extension RegistViewController : UITableViewDataSource
+{
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Int(destination.routes.count)
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
+        
+        cell.textLabel?.numberOfLines = 0
+        
+        if let route = destination.routes[UInt(indexPath.row)] as? Route {
+            cell.textLabel?.text = route.toString()
+        }
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
 }
