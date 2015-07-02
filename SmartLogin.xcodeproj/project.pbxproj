@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		8ABAD85F0165B73D6B548C19 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3C108139939611075A2E15 /* libPods.a */; };
+		E971FE2A1B4592FC002DE89E /* RegistDestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971FE291B4592FC002DE89E /* RegistDestinationViewController.swift */; };
 		E9AA4D3A1B41A4740047E1E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA4D391B41A4740047E1E9 /* AppDelegate.swift */; };
 		E9AA4D411B41A4740047E1E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9AA4D3F1B41A4740047E1E9 /* Main.storyboard */; };
 		E9AA4D431B41A4740047E1E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9AA4D421B41A4740047E1E9 /* Images.xcassets */; };
 		E9AA4D461B41A4740047E1E9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AA4D441B41A4740047E1E9 /* LaunchScreen.xib */; };
 		E9AA4D521B41A4740047E1E9 /* SmartLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA4D511B41A4740047E1E9 /* SmartLoginTests.swift */; };
-		E9AA4D5C1B41A6CD0047E1E9 /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA4D5B1B41A6CD0047E1E9 /* RegistViewController.swift */; };
+		E9AA4D5C1B41A6CD0047E1E9 /* RegistWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA4D5B1B41A6CD0047E1E9 /* RegistWebViewController.swift */; };
 		E9AA4D5E1B41AC0E0047E1E9 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA4D5D1B41AC0E0047E1E9 /* RequestType.swift */; };
 		E9AA4D601B41AF010047E1E9 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA4D5F1B41AF010047E1E9 /* WebViewController.swift */; };
 		E9AA4D681B42E15C0047E1E9 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA4D671B42E15C0047E1E9 /* ListViewController.swift */; };
@@ -37,6 +38,7 @@
 		3C3C108139939611075A2E15 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		891119FED7299155BC14018D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DA954C6431F2A1020263909F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E971FE291B4592FC002DE89E /* RegistDestinationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistDestinationViewController.swift; sourceTree = "<group>"; };
 		E9AA4D341B41A4740047E1E9 /* SmartLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9AA4D381B41A4740047E1E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9AA4D391B41A4740047E1E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,7 +48,7 @@
 		E9AA4D4B1B41A4740047E1E9 /* SmartLoginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartLoginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9AA4D501B41A4740047E1E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9AA4D511B41A4740047E1E9 /* SmartLoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartLoginTests.swift; sourceTree = "<group>"; };
-		E9AA4D5B1B41A6CD0047E1E9 /* RegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
+		E9AA4D5B1B41A6CD0047E1E9 /* RegistWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistWebViewController.swift; sourceTree = "<group>"; };
 		E9AA4D5D1B41AC0E0047E1E9 /* RequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		E9AA4D5F1B41AF010047E1E9 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		E9AA4D661B42DAE80047E1E9 /* SmartLogin-Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartLogin-Bridge-Header.h"; sourceTree = "<group>"; };
@@ -160,7 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				E9AA4D671B42E15C0047E1E9 /* ListViewController.swift */,
-				E9AA4D5B1B41A6CD0047E1E9 /* RegistViewController.swift */,
+				E971FE291B4592FC002DE89E /* RegistDestinationViewController.swift */,
+				E9AA4D5B1B41A6CD0047E1E9 /* RegistWebViewController.swift */,
 				E9AA4D5F1B41AF010047E1E9 /* WebViewController.swift */,
 			);
 			name = Controllers;
@@ -320,12 +323,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9AA4D741B4438250047E1E9 /* Alert.swift in Sources */,
-				E9AA4D5C1B41A6CD0047E1E9 /* RegistViewController.swift in Sources */,
+				E9AA4D5C1B41A6CD0047E1E9 /* RegistWebViewController.swift in Sources */,
 				E9AA4D791B443EB70047E1E9 /* Destination.swift in Sources */,
 				E9AA4D3A1B41A4740047E1E9 /* AppDelegate.swift in Sources */,
 				E9AA4D5E1B41AC0E0047E1E9 /* RequestType.swift in Sources */,
 				E9AA4D7B1B4448760047E1E9 /* Route.swift in Sources */,
 				E9AA4D681B42E15C0047E1E9 /* ListViewController.swift in Sources */,
+				E971FE2A1B4592FC002DE89E /* RegistDestinationViewController.swift in Sources */,
 				E9AA4D601B41AF010047E1E9 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -59,7 +59,7 @@
                     <navigationItem key="navigationItem" title="Smart Login" id="tQt-TN-PWz">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="EsA-nX-v9X">
                             <connections>
-                                <segue destination="tqG-Q5-wVh" kind="show" id="aYL-Dq-tIM"/>
+                                <segue destination="prp-78-qSV" kind="presentation" id="OCk-AF-PNi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -84,13 +84,101 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WxY-Q6-riq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1319" y="-630"/>
+            <point key="canvasLocation" x="1380" y="64"/>
         </scene>
-        <!--Regist View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="76N-0M-tEx">
+            <objects>
+                <navigationController id="prp-78-qSV" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aK8-gd-flr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="3p0-j2-HWO" kind="relationship" relationship="rootViewController" id="9wa-Tk-6cz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sUT-DS-95t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1380" y="-639"/>
+        </scene>
+        <!--Regist Destination View Controller-->
+        <scene sceneID="15X-DT-SHx">
+            <objects>
+                <viewController id="3p0-j2-HWO" customClass="RegistDestinationViewController" customModule="SmartLogin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d86-nI-DLq"/>
+                        <viewControllerLayoutGuide type="bottom" id="9VN-sT-B61"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xS2-10-uqb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タイトル" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zcE-Gt-Gme">
+                                <rect key="frame" x="16" y="80" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3p0-j2-HWO" id="eS6-4H-lfT"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iuj-pk-Nvp">
+                                <rect key="frame" x="16" y="126" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3p0-j2-HWO" id="fOM-00-jD6"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVi-IN-Fh5">
+                                <rect key="frame" x="16" y="188" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PDD-OB-jNU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="次へ">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="tqG-Q5-wVh" kind="show" id="WaZ-zx-seu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bVi-IN-Fh5" firstAttribute="leading" secondItem="xS2-10-uqb" secondAttribute="leading" constant="16" id="518-Lp-yYe"/>
+                            <constraint firstItem="bVi-IN-Fh5" firstAttribute="top" secondItem="Iuj-pk-Nvp" secondAttribute="bottom" constant="32" id="8l0-Be-Gqc"/>
+                            <constraint firstAttribute="trailing" secondItem="bVi-IN-Fh5" secondAttribute="trailing" constant="16" id="Cam-Pd-miP"/>
+                            <constraint firstAttribute="trailing" secondItem="Iuj-pk-Nvp" secondAttribute="trailing" constant="16" id="MyY-pO-N5b"/>
+                            <constraint firstItem="zcE-Gt-Gme" firstAttribute="leading" secondItem="xS2-10-uqb" secondAttribute="leading" constant="16" id="NdG-hg-VT7"/>
+                            <constraint firstAttribute="trailing" secondItem="zcE-Gt-Gme" secondAttribute="trailing" constant="16" id="UDf-sQ-PTW"/>
+                            <constraint firstItem="zcE-Gt-Gme" firstAttribute="top" secondItem="d86-nI-DLq" secondAttribute="bottom" constant="16" id="f0t-nw-AE8"/>
+                            <constraint firstItem="Iuj-pk-Nvp" firstAttribute="top" secondItem="zcE-Gt-Gme" secondAttribute="bottom" constant="16" id="nfh-jd-slk"/>
+                            <constraint firstItem="Iuj-pk-Nvp" firstAttribute="top" secondItem="zcE-Gt-Gme" secondAttribute="bottom" constant="16" id="vGN-oP-jGF"/>
+                            <constraint firstItem="Iuj-pk-Nvp" firstAttribute="leading" secondItem="xS2-10-uqb" secondAttribute="leading" constant="16" id="zJx-m1-dr4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BXk-be-FmB">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="pM3-Ro-BTQ">
+                            <connections>
+                                <action selector="close:" destination="3p0-j2-HWO" id="jXx-fC-HXx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nextButton" destination="bVi-IN-Fh5" id="NaG-wa-Ujk"/>
+                        <outlet property="titleTextLabel" destination="zcE-Gt-Gme" id="qrX-WA-ST0"/>
+                        <outlet property="urlTextLabel" destination="Iuj-pk-Nvp" id="ZWR-NG-v3e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aye-wi-5x4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2057" y="-639"/>
+        </scene>
+        <!--Regist Web View Controller-->
         <scene sceneID="G2p-GG-PTW">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gxf-G4-YPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="tqG-Q5-wVh" customClass="RegistViewController" customModule="SmartLogin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tqG-Q5-wVh" customClass="RegistWebViewController" customModule="SmartLogin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bqD-kj-kNy"/>
                         <viewControllerLayoutGuide type="bottom" id="VJ1-Od-Vf4"/>
@@ -101,15 +189,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="KDd-0w-xRp">
-                        <barButtonItem key="rightBarButtonItem" title="Show" id="jd4-vg-DfJ">
+                        <barButtonItem key="rightBarButtonItem" title="一覧" id="jd4-vg-DfJ">
                             <connections>
                                 <action selector="tappedLeftBarButton:" destination="tqG-Q5-wVh" id="sZq-mF-MtX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gxf-G4-YPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1317" y="64"/>
+            <point key="canvasLocation" x="2751" y="-639"/>
         </scene>
     </scenes>
 </document>

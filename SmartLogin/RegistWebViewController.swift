@@ -1,5 +1,5 @@
 //
-//  RegistViewController.swift
+//  RegistWebViewController.swift
 //  SmartLogin
 //
 //  Created by Hiroki Yoshifuji on 2015/06/30.
@@ -8,19 +8,19 @@
 
 import UIKit
 
-class RegistViewController : TOWebViewController
+class RegistWebViewController : TOWebViewController
 {
-    private var destination = Destination()
+    var destination:Destination!
+    var requestURL: NSURL!
+    
     private var maskView = UIView()
     private var registViewItaem:UIView!
     
-    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
         maskView.backgroundColor = UIColor(white: 0, alpha: 0.3)
         maskView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "close:"))
         if let views = NSBundle.mainBundle().loadNibNamed("RegistViewItem", owner: self, options: nil) as? [UIView] {
@@ -29,6 +29,7 @@ class RegistViewController : TOWebViewController
             tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         }
         
+        self.webView.loadRequest(NSURLRequest(URL: requestURL))
      }
     
     private func showRegistViewItem() {
@@ -72,9 +73,6 @@ class RegistViewController : TOWebViewController
     @IBAction func regist(sender: AnyObject) {
         let realm = RLMRealm.defaultRealm()
         
-        if let route = destination.routes[0] as? Route {
-            destination.title = route.url
-        }
         realm.beginWriteTransaction()
         realm.addObject(destination)
         realm.commitWriteTransaction()
@@ -87,18 +85,7 @@ class RegistViewController : TOWebViewController
     }
 }
 
-extension RegistViewController : UISearchBarDelegate
-{
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        if let URL = NSURL(string: searchBar.text) {
-            self.webView.loadRequest(NSURLRequest(URL: URL))
-            searchBar.resignFirstResponder()
-            closeRegistViewItem()
-        }
-    }
-}
-
-extension RegistViewController : UIWebViewDelegate
+extension RegistWebViewController : UIWebViewDelegate
 {
     override func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         super.webView(webView, shouldStartLoadWithRequest: request, navigationType: navigationType)
@@ -117,7 +104,7 @@ extension RegistViewController : UIWebViewDelegate
     }
 }
 
-extension RegistViewController : UITableViewDataSource
+extension RegistWebViewController : UITableViewDataSource
 {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Int(destination.routes.count)
@@ -135,8 +122,12 @@ extension RegistViewController : UITableViewDataSource
         return cell
     }
     
-    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
     
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            destination.routes.removeObjectAtIndex( UInt(indexPath.row) )
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Top)
+        }
+    }
 }

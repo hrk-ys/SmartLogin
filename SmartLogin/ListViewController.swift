@@ -23,6 +23,9 @@ class ListViewController : UITableViewController
             self.tableView.reloadData()
         })
         
+        let backButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

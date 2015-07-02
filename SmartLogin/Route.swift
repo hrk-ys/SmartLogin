@@ -51,6 +51,6 @@ class Route: RLMObject {
     }
     
     func toString() -> String {
-        return "\(method) \(url)\n\(content)"
+        return "\(method) \(url) \(content)"
     }
 }
