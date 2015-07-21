@@ -23,6 +23,7 @@ class RegistDestinationViewController : UIViewController
         super.viewDidLoad()
         
         titleTextLabel.becomeFirstResponder()
+        urlTextLabel.text = "http://g-schedule.com/"
     }
     
     private func updateLayout() {

@@ -35,7 +35,15 @@ class WebViewController : TOWebViewController
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        self.navigationController?.interactivePopGestureRecognizer.delegate = self
+        
         request()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.navigationController?.interactivePopGestureRecognizer.delegate = nil
     }
     
     private func request() {
@@ -60,6 +68,12 @@ class WebViewController : TOWebViewController
     }
 }
 
+extension WebViewController : UIGestureRecognizerDelegate
+{
+    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return false
+    }
+}
 
 extension WebViewController : UIWebViewDelegate
 {
